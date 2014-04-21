@@ -1,0 +1,17 @@
+{
+    "contents" : "source(\"code/utility.string.R\")\ninputFile <- \"data/6.3-lcs-1.txt\"\n#inputFile <- \"C:/Users/Ashis/Downloads/dataset_75_5 (4).txt\"\noutputFile <- \"results/6.3-lcs.txt\"\n\ninputs <- readLines(con=inputFile, warn=F)\ns <- inputs[1]\nt <- inputs[2]\n\nseq <- lcs(s,t)\ncat(seq,file=outputFile)\n",
+    "created" : 1396867025152.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1115859071",
+    "id" : "3543D4F1",
+    "lastKnownWriteTime" : 1393144587,
+    "path" : "D:/Copy/Coursera/Bioinformatics Algorithms (part-I)/MyPrograms/week6/code/6.3-lcs.R",
+    "project_path" : "code/6.3-lcs.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,16 @@
+{
+    "contents" : "inputFile <- \"data/change_problem-2.txt\"\ninputFile <- \"C:/Users/Ashis/Downloads/dataset_72_9.txt\"\noutputFile <- \"results/6.1-change-problem.txt\"\n\ninputs <- readLines(con=inputFile, warn=F)\nmoney <- as.integer(inputs[1])\nnumbers <- strsplit(inputs[2], \",\")[[1]]\ncoins <- as.integer(numbers)\n\n\nDPChange <- function(money, coins){\n  minNumCoins <- 0\n  maxCoin <- max(coins)\n  for(m in 1:money){\n    candidates <- (m - coins) + 1    # +1 for indexing\n    if(m < maxCoin){\n      candidates <- candidates[candidates>0]\n    }\n    \n    minNumCoins[m+1] <- ifelse(length(candidates)>0, min(minNumCoins[candidates] + 1), Inf)\n  }\n  \n  return(minNumCoins[m+1])\n}\n\nminCoins <- DPChange(money, coins)\nwriteLines(paste(minCoins))\n",
+    "created" : 1393126891017.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2209061182",
+    "id" : "23F09D83",
+    "lastKnownWriteTime" : 1392801258,
+    "path" : "D:/Copy/Coursera/Bioinformatics Algorithms (part-I)/MyPrograms/week6/code/6.1-ChangeProblem.R",
+    "project_path" : "code/6.1-ChangeProblem.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

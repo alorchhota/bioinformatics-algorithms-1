@@ -1,0 +1,17 @@
+{
+    "contents" : "source(\"code/utility.graph.R\")\ninputFile <- \"data/6.4-longest-path-in-dag-1.txt\"\n#inputFile <- \"C:/Users/Ashis/Downloads/dataset_75_5 (4).txt\"\noutputFile <- \"results/6.4-longest-path-in-dag-1.txt\"\n\ninputs <- readLines(con=inputFile, warn=F)\nstart <- inputs[1]\nend <- inputs[2]\nedges <- inputs[3:length(inputs)]\n\ng <- weightedGraphFromEdges(edges)\n\ngetLongestPathInDAG(g, \"0\",\"4\")\n",
+    "created" : 1393144592281.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3018519938",
+    "id" : "EF1D1136",
+    "lastKnownWriteTime" : 1393147129,
+    "path" : "D:/Copy/Coursera/Bioinformatics Algorithms (part-I)/MyPrograms/week6/code/6.4-longest-path-in-dag-1.R",
+    "project_path" : "code/6.4-longest-path-in-dag-1.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

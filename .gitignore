@@ -55,3 +55,6 @@ docs/_build/
 # custom
 results/
 
+# R ignore list
+.RData
+.Rhistory

@@ -7,7 +7,7 @@ import networkx as nx
 
 # settings
 #curDir = 'E:/GitHub/bioinformatics-algorithms-1/week9'
-curDir = 'D:/Copy/Coursera/Bioinformatics Algorithms (part-I)/MyPrograms/week9'
+curDir = 'D:/GitHub/bioinformatics-algorithms-1/week9'
 inputFile = './data/4.SuffixTreeConstruction-2.txt'
 inputFile = 'C:/Users/Ashis/Downloads/dataset_296_4.txt'
 outputFile = './results/4.SuffixTreeConstruction.txt'
@@ -20,6 +20,7 @@ with open(inputFile) as f:
     inputs = f.readlines()
 
 genome = inputs[0].strip()
+genome = 'panamabananas$'
 #print(genome)
 #print(patterns)
 

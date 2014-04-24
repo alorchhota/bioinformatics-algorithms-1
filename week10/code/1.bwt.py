@@ -24,10 +24,12 @@ genome = inputs[0].strip()
 genomeLen = len(genome)
 
 
-def suffixArray_v1(s):
+def suffixArray_v1(s):
+
     satups = sorted([(s[i:], i) for i in range(len(s))])
     # Extract and return just the offsets
-    return map(lambda x: x[1], satups)
+    return map(lambda x: x[1], satups)
+
 
 def suffixArray(genome):
     suffix  = lambda idx: genome[idx:]

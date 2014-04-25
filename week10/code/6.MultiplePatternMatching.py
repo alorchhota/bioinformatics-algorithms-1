@@ -7,10 +7,10 @@ import networkx as nx
 import itertools
 
 # settings
-#curDir = 'E:/GitHub/bioinformatics-algorithms-1/week10'
-curDir = 'D:/GitHub/bioinformatics-algorithms-1/week10'
-inputFile = './data/6.MultiplePatternMatching-2.txt'
-#inputFile = 'C:/Users/Ashis/Downloads/dataset_301_7.txt'
+curDir = 'E:/GitHub/bioinformatics-algorithms-1/week10'
+#curDir = 'D:/GitHub/bioinformatics-algorithms-1/week10'
+inputFile = './data/6.MultiplePatternMatching-1.txt'
+#inputFile = 'C:/Users/Ashis/Downloads/dataset_303_4.txt'
 outputFile = './results/6.MultiplePatternMatching.txt'
 
 # set current directory
@@ -20,14 +20,14 @@ os.chdir(curDir)
 with open(inputFile) as f:
     inputs = f.readlines()
 
-genome = inputs[0].strip()
+genome = inputs[0].strip() + '$'
 patterns = [p.strip() for p in inputs[1:]]
 
 
 print(len(genome))
-print(len(patterns[0]))
+#print(len(patterns[0]))
 #genome = genome[1:9000]
-patterns = patterns[0:5]
+#patterns = patterns[0:5]
 
 #print(genome)
 #print(patterns)
@@ -105,6 +105,7 @@ for i in range(genomeLen):
 def bwtMatch(pattern):
     top = 0
     bottom = genomeLen - 1
+    initialPattern = pattern
 
     while top <= bottom:
         if len(pattern) > 0:
@@ -116,6 +117,8 @@ def bwtMatch(pattern):
             else:
                 return []
         else:
+            #if top >= 5792 and bottom <= 5792:
+            #    print(initialPattern)
             return [x for x in range(top, bottom+1)]
 
 
@@ -129,8 +132,8 @@ matchBwtIndexes = set(matchBwtIndexes)
 
 # convert to original index
 sarr = suffixArray(genome)
-matchBwtIndexes = [(idx, sarr[idx]) for idx in matchBwtIndexes if sarr[idx]==14]
-
+matchBwtIndexes = [sarr[idx] for idx in matchBwtIndexes]
+matchBwtIndexes = sorted(matchBwtIndexes)
 
 
 ## output
